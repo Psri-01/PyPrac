@@ -1,4 +1,4 @@
-for left in range(11):
-    for right in range(left, 11):
+for left in range(7):
+    for right in range(left, 7):
         print("[" + str(left) + "|" + str(right) + "]", end=" ")
     print()
