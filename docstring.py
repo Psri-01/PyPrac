@@ -58,3 +58,12 @@ class Apple(builtins.object)
  |  __weakref__
  |      list of weak references to the object (if defined)
  '''
+
+>>> def to_seconds(hours, minutes, seconds):
+...     """Returns the amount of seconds in the given hours, minutes and seconds."""
+...     return hours*3600+minutes*60+seconds
+>>> help(to_seconds)
+'''Help on function to_seconds in module __main__:
+
+to_seconds(hours, minutes, seconds)
+    Returns the amount of seconds in the given hours, minutes and seconds.'''
