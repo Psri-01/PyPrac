@@ -4,8 +4,7 @@ def sort(arr, n):
 	while(i < n):
 		# finding the corrent index
 		correct = arr[i]-1
-		# Element index and value not match
-		# then swapping
+		# If element index and value don't match then swap
 		if arr[correct] != arr[i]:
 			# calling swap function
 			swap(arr, i, correct)
