@@ -33,3 +33,10 @@ a = set(map(int,input().split()))
 input()
 b = set(map(int,input().split()))
 print(len(a.difference(b)))
+
+# Output total number of students who have subscriptions to the English or the French newspaper but not both.
+input()
+a = set(map(int,input().split()))
+input()
+b = set(map(int,input().split()))
+print(len(a.symmetric_difference(b)))
