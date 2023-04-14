@@ -32,3 +32,9 @@ print(A * B)
 print(A // B)
 print(A % B)
 print(A ** B)
+
+'''FLOOR CEIL AND RINT FUNCTIONS'''
+import numpy as np
+np.set_printoptions(legacy='1.13')
+arr=np.array([float(i)for i in input().split()])
+print(np.floor(arr),np.ceil(arr),np.rint(arr), sep="\n")
