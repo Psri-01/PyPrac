@@ -25,3 +25,9 @@ from itertools import product
 k,m = map(int,input().split())
 arr = (list(map(int, input().split()))[1:] for _ in range(k))
 print(max(map(lambda x: sum(i**2 for i in x)%m, product(*arr))))
+
+'''PRODUCT'''
+from itertools import product
+a = list(map(int, input().split()))
+b = list(map(int, input().split()))
+print(*list(product(a,b)))
