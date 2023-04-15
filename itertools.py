@@ -53,3 +53,8 @@ from itertools import combinations_with_replacement
 s,k = input().split()
 for i in combinations_with_replacement(sorted(s),int(k)):
     print("".join(i))
+
+'''COMPRESS THE STRING'''
+from itertools import groupby
+s = input()
+print(*[(len(list(g)),int(k))for k,g in groupby(s)])
