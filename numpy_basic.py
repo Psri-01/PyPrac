@@ -38,3 +38,9 @@ import numpy as np
 np.set_printoptions(legacy='1.13')
 arr=np.array([float(i)for i in input().split()])
 print(np.floor(arr),np.ceil(arr),np.rint(arr), sep="\n")
+
+'''Sum and Product'''
+import numpy
+N,M = map(int,input().split())
+A = numpy.array([input().split() for _ in range(N)], int)
+print(numpy.prod(numpy.sum(A,axis=0),axis=0))
