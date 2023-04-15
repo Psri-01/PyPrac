@@ -58,3 +58,11 @@ A = numpy.array([list(map(int,input().split())) for _ in range(N)])
 print(numpy.mean(A, axis=1))
 print(numpy.var(A, axis=0))
 print(numpy.round(numpy.std(A), 11))
+
+'''DOT AND CROSS'''
+import numpy
+N= int(input())
+A = numpy.array([input().split() for _ in range(N)],int)
+B = numpy.array([input().split() for _ in range(N)],int)
+print(numpy.dot(A,B))
+print(numpy.cross(A,B))
