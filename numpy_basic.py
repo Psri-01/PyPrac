@@ -66,3 +66,9 @@ A = numpy.array([input().split() for _ in range(N)],int)
 B = numpy.array([input().split() for _ in range(N)],int)
 print(numpy.dot(A,B))
 print(numpy.cross(A,B))
+
+'''INNER AND OUTER'''
+import numpy
+A = numpy.array(input().split(),int)
+B = numpy.array(input().split(),int)
+print(numpy.inner(A,B),numpy.outer(A,B),sep='\n')
