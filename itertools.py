@@ -47,3 +47,9 @@ s, k = input().split()
 for i in range(1,int(k)+1):
     for j in combinations(sorted(s),i):
         print(''.join(j))
+
+'''COMBINATIONS WITH REPLACEMENT'''
+from itertools import combinations_with_replacement
+s,k = input().split()
+for i in combinations_with_replacement(sorted(s),int(k)):
+    print("".join(i))
