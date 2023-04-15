@@ -31,3 +31,12 @@ from itertools import product
 a = list(map(int, input().split()))
 b = list(map(int, input().split()))
 print(*list(product(a,b)))
+
+'''PERMUTATIONS'''
+from itertools import permutations
+s,k = input().split()
+result = list(permutations(s,int(k)))
+for i in sorted(result):
+    for x in i:
+        print(x,end='')
+    print()
