@@ -41,6 +41,6 @@ Sample Output
 1.1071487177940904
 """
 from cmath import phase
-complx = complex(input())
-print(abs(complex(complx.real,complx.imag)))
-print(phase(complex(complx.real,complx.imag)))
+z = complex(input())
+print(abs(complex(z.real,z.imag)))
+print(phase(complex(z.real,z.imag)))
