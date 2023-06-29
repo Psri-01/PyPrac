@@ -23,3 +23,16 @@ sort(arr, n)
 # printing it
 for i in range(0, n):
 	print(arr[i], end=" ")
+
+//RECURSION
+def arrsort(arr):
+    n=len(arr)
+    if n==0 or n==1:
+        return True
+    return arr[0]<=arr[1] and arrsort(arr[1:])
+arr=[1,2,3,4,5,6,7]
+if arrsort(arr):
+    print('Yes')
+else:
+    print('No')
+#https://www.geeksforgeeks.org/program-check-array-sorted-not-iterative-recursive/
