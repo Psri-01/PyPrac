@@ -1,0 +1,44 @@
+num=input('Enter a num: ')
+sum=0
+for i in num:
+    sum=sum+int(i) 
+print(sum)
+
+num, sum = 12345, 0
+def findSum(num, sum):
+    if num == 0:
+        return sum
+    digit = int(num % 10)
+    sum += digit
+    return findSum(num / 10, sum)
+print(findSum(num, sum))
+
+num= 12345
+def findSum(num):
+    if num == 0:
+        return 0
+    return int(num % 10)+ findSum(num/10)
+print(findSum(num))
+
+num,sum= 12345,0
+for i in range(len(str(num))):
+    sum+=ord(str(num)[i])-48
+print(sum)
+
+def getSum(n):
+    # convert into string
+    num_string = str(n)
+    # fetch each individual char using strip method find comparable int and store it in map, convert it into list
+    list_of_number = list(map(int, num_string.strip()))    
+    print(list_of_number)    
+    return sum(list_of_number)
+n = int(input("Enter the number: "))
+print(getSum(n))
+
+def sumDigits(n):
+    return 0 if n==0 else int(n%10)+sumDigits(int(n/10))
+n = int(input("Enter the number: "))
+print(sumDigits(n))
+
+n = [int(d) for d in input("Enter the number : ")]
+print("the sum of digits is : ", sum(n))
