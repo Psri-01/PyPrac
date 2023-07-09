@@ -6,3 +6,6 @@ while num>0:
     reverse=(reverse*10)+remainder
     num=num//10
 print(reverse)
+
+num = 1234
+print(str(num)[::-1])
