@@ -9,3 +9,17 @@ print(is_harshad_number(202)) # F
 print(is_harshad_number(153)) # True, 1 + 5 + 3 = 9, 153 is divisible by 9
 print(is_harshad_number(100)) # T
 print(is_harshad_number(408)) # T
+
+n=21
+p=n
+l=[]
+sum1=0
+while(n>0):
+    x=n%10
+    l.append(x)
+    n=n//10
+sum1=sum(l)
+if(p%sum1==0):
+    print('Harshad num')
+else:
+    print('Not a hs num')
