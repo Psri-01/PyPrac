@@ -22,3 +22,11 @@ def getHcf(a,b):
 num1=36
 num2=60
 print("Hcf of", num1, "and", num2, "is", getHcf(num1, num2))
+
+n1=36
+n2=60
+gcd=1
+for i in range(1,min(n1,n2)):
+    if n1%i==0 and n2%i==0:
+        gcd=i
+print(gcd)
