@@ -66,3 +66,16 @@ class Solution(object):
             if v==2:
                 res.append(k)
         return res
+
+class Solution(object):
+    def peakIndexInMountainArray(self, arr):
+        start=0
+        end=len(arr)-1
+        mid=(start+end)//2
+        while(start<end):
+            if arr[mid]<arr[mid+1]:
+                start=mid+1
+            else:
+                end=mid
+            mid=(start+end)//2
+        return start
