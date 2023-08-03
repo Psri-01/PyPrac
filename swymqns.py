@@ -36,6 +36,7 @@ X2 = 4
 Y2 = 3
 output2 = find_max_tip(ai2, bi2, no_of_integers2, X2, Y2)  
 
+# Maximum sum of triplets
 import sys
 input_from_question=input()
 def solution(input_from_question):
