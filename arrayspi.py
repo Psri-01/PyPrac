@@ -230,3 +230,172 @@ def findPairs(pairs):
             print((x,y))
 pairs = [(3, 4), (1, 2), (5, 2), (7, 10), (4, 3), (2, 5)]
 findPairs(pairs)
+
+def findDuplicate(arr):
+    n = len(arr)
+    duplicate = 0
+    for currentNumber in range(1, n):
+        count = 0
+        for index in range(n):
+            if (arr[index] == currentNumber) :
+                count += 1            
+        if (count > 1):
+            duplicate = currentNumber
+    return duplicate
+
+def maxSubarrayProduct(arr,n):
+    result=arr[0]
+    for i in range(n):
+        mul=arr[i]
+        for j in range(i+1,n):
+            result=max(result,mul)
+            mul*=arr[j]
+        result=max(result,mul)
+    return result 
+arr = [ 1, -2, -3, 0, 7, -8, -2 ]
+n=len(arr)
+print(maxSubarrayProduct(arr,n))
+
+def areDis(set1,set2,m,n):
+    set1.sort()
+    set2.sort()
+    #print(set1)
+    #print(set2)
+    i=0;j=0
+    while(i<m and j<n):
+        if(set1[i]<set2[j]):
+            i+=1
+        elif(set2[j]<set1[i]):
+            j+=1
+        else:
+            return False
+    return True
+arr1 = [12, 34, 11, 9, 3]
+arr2 = [7, 2, 1, 5]
+m=len(arr1)
+n=len(arr2)
+print('Yes') if areDis(arr1,arr2,m,n) else print('No')
+
+def areDis(set1,set2,n1,n2):
+    myset=set([])
+    # Traverse the first set and store its elements in hash
+    for i in range(n1):
+        myset.add(set1[i])
+    for i in range(n2):
+        if(set2[i] in myset):
+            return False
+    return True
+arr1 = [10, 5, 3, 4, 6]
+arr2 = [8, 7, 9, 3] 
+n1 = len(arr1)
+n2 = len(arr2)
+if(areDis(arr1,arr2,n1,n2)):
+    print('Yes')
+else:
+    print('nein')
+
+'''It initializes two variables i and j to 0.
+It iterates over each element of arr2 (outer loop) using the variable i.
+For each element in arr2, it iterates over each element of arr1 (inner loop) using the variable j.
+If the element in arr2 at index i is found in arr1 at index j, it breaks out of the inner loop and proceeds to the next element in arr2.
+If the inner loop completes without finding the element from arr2 in arr1, it means arr2[i] is not present in arr1, and the function should return 0 (indicating that arr2 is not a subset of arr1).
+If the outer loop completes without returning 0, it means all elements of arr2 are found in arr1, and the function should return 1 (indicating that arr2 is a subset of arr1).'''
+def isSubset(arr1, arr2, m, n):
+    for i in range(n):
+        found = False
+        for j in range(m):
+            if arr2[i] == arr1[j]:
+                found = True
+                break
+        if not found:
+            return False
+    return True
+arr1 = [11, 12, 13, 21, 30, 70]
+arr2 = [11, 30, 70, 12]
+m = len(arr1)
+n = len(arr2)
+if isSubset(arr1, arr2, m, n):
+    print("arr2[] is a subset of arr1[]")
+else:
+    print("arr2[] is not a subset of arr1[]")
+
+def lcm(arr,length):
+    for i in range(0,length):
+        while arr[i]%2==0:
+            arr[i]=arr[i]//2
+        while arr[i]%3==0:
+            arr[i]=arr[i]//3
+    if arr[i]!=arr[0]:
+        return False
+    return True
+arr = [50, 100, 75]
+length=len(arr)
+if lcm(arr,length):
+    print("Yes, all the elements of the array can be made equal")
+else:
+    print("No can't be made equal")
+
+def sumOfMinAbsDiff(arr,n):
+    arr.sort()
+    sum=0
+    sum+=abs(arr[0]-arr[1]);
+    sum+=abs(arr[n-1]-arr[n-2]);
+    for i in range(1,n-1):
+        sum+=min(abs(arr[i] - arr[i - 1]),
+                  abs(arr[i] - arr[i + 1]))
+    return sum;
+arr = [2, 5, 4, 3]
+n = len(arr)
+print( "Required Sum =", sumOfMinAbsDiff(arr, n))
+
+# hashing
+from collections import Counter
+def solve(arr1,arr2):
+    res=[]
+    f=Counter(arr1)
+    for e in arr2:
+        res.extend([e]*f[e])
+        f[e]=0
+    rem=list(sorted(filter(lambda x:f[x]!=0,f.keys())))
+    for e in rem:
+        res.extend([e]*f[e])
+    return res
+arr1 = [ 20, 1, 20, 5, 7, 1, 9, 39, 6, 18, 18 ];
+arr2 = [ 20, 1, 18, 39 ];
+print(*solve(arr1,arr2))
+
+def changeArr(input1):
+    newArray=input1.copy()
+    newArray.sort()
+    for i in range(len(input1)):
+        for j in range(len(newArray)):
+            if input1[i]==newArray[j]:
+                input1[i]=j+1;
+                break
+arr=[100,2,75,30,90]
+changeArr(arr)
+print(arr)
+
+a=[4,-2,0,6,-4]
+ans=-1
+for i in range(1,len(a)):
+    if sum(a[:i])==sum(a[i+1:]):
+        ans=i
+        break
+print('Equilibrium index of an array: ',ans)        
+
+# Circular rotation of an array by K position
+def circular_rotate_array(arr, K):
+    # Calculate the effective value of K
+    K = K % len(arr)
+    # Reverse the entire array
+    arr = arr[::-1]
+    # Reverse the first K elements
+    arr[:K] = arr[:K][::-1]
+    # Reverse the remaining elements after Kth position
+    arr[K:] = arr[K:][::-1]
+    return arr
+original_array = [1, 2, 3, 4, 5]
+K = 2
+result_array = circular_rotate_array(original_array, K)
+print(result_array)  # Output: [4, 5, 1, 2, 3]
